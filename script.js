@@ -299,15 +299,15 @@ function renderRecipes() {
                                     console.error(`Type "${R.type}" is not accepted`)
                                 }
                                 if (Type == 'crafting_shaped') {
-                                    var BackgroundImage = '<img src="/theme/' + theme + '/mc_crafting_shaped.png" alt=" " draggable="false">'
+                                    var BackgroundImage = '<img src="./theme/' + theme + '/mc_crafting_shaped.png" alt=" " draggable="false">'
                                 } else if (Type == 'crafting_shapeless') {
-                                    var BackgroundImage = '<img src="/theme/' + theme + '/mc_crafting_shapeless.png" alt=" " draggable="false">'
+                                    var BackgroundImage = '<img src="./theme/' + theme + '/mc_crafting_shapeless.png" alt=" " draggable="false">'
                                 } else if (Type == 'smelting') {
-                                    var BackgroundImage = '<img src="/theme/' + theme + '/mc_smelting.gif" alt=" " draggable="false">'
+                                    var BackgroundImage = '<img src="./theme/' + theme + '/mc_smelting.gif" alt=" " draggable="false">'
                                 } else if (Type == 'stonecutter') {
-                                    var BackgroundImage = '<img src="/theme/' + theme + '/mc_stonecutter.png" alt=" " draggable="false">'
+                                    var BackgroundImage = '<img src="./theme/' + theme + '/mc_stonecutter.png" alt=" " draggable="false">'
                                 } else if (Type == 'smithing') {
-                                    var BackgroundImage = '<img src="/theme/' + theme + '/mc_smithing.png" alt=" " draggable="false">'
+                                    var BackgroundImage = '<img src="./theme/' + theme + '/mc_smithing.png" alt=" " draggable="false">'
                                 };
 
                                 // output
