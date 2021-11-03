@@ -95,7 +95,7 @@ function renderRecipes() {
                                     "underlined": true,
                                     "clickEvent": {
                                         "action": "open_url",
-                                        "value": "README.md"
+                                        "value": "./docs"
                                     }
                                 }
                             ]
