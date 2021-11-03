@@ -66,10 +66,43 @@ function renderRecipes() {
     var UUID = randomId();
     $.getJSON(RECIPES, function (file) {
         if (file.description) {
+            /* meta */
+            if (file.description.meta) {
+                const M = file.description.meta
+                if (M.title) {
+                    document.querySelector('title').innerHTML = M.title + ' | Minecraft Recipe Display'
+                    var all = document.querySelectorAll('.MetaTitle')
+                    for (let i = 0; i < all.length; i++) {
+                        const A = all[i];
+                        A.content = M.title
+                    }
+                };
+                if (M.description) {
+                    var all = document.querySelectorAll('.MetaDesc')
+                    for (let i = 0; i < all.length; i++) {
+                        const A = all[i];
+                        A.content = M.description
+                    }
+                };
+                if (M.url) {
+                    var all = document.querySelectorAll('.MetaURL')
+                    for (let i = 0; i < all.length; i++) {
+                        const A = all[i];
+                        A.content = M.url
+                    }
+                };
+                if (M.image) {
+                    document.querySelector('.MetaIcon').href = M.image
+                    var all = document.querySelectorAll('.MetaImage')
+                    for (let i = 0; i < all.length; i++) {
+                        const A = all[i];
+                        A.content = M.image
+                    }
+                };
+
+            }
             /* description */
             if (file.description.theme) { var theme = file.description.theme } else { var theme = 'light' };
-            if (file.description.title) { document.querySelector('title').innerHTML = file.description.title + ' | Minecraft Recipe Display' };
-
             if (file.description.msgbox) {
                 if (Array.isArray(file.description.msgbox)) {
                     for (let i = 0; i < file.description.msgbox.length; i++) {
