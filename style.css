@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+
+@font-face {
+    font-family: Minecraft;
+    src: url(/theme/minecraft_font.otf);
+}
+
+:root.dark {
+    --text: gray;
+    --background-primary: #373737;
+    --background-secondary: #525252;
+    --border: #6b6b6b;
+    --tooltip-background: #120312;
+    --tooltip-text: #ffffff;
+    --table-header: #1f1f1f;
+}
+
+:root.light {
+    --text: black;
+    --background-primary: #e6eff4;
+    --background-secondary: #f8f9fa;
+    --border: #bbc2c6;
+    --tooltip-background: #120312;
+    --tooltip-text: #ffffff;
+    --table-header: #eaecf0;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--background-primary);
+}
+
+.mcItem {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+}
+
+table {
+    background-color: var(--border)
+}
+
+tr {
+    background-color: var(--border);
+    min-width: 100px;
+    max-width: 30vw;
+}
+
+th {
+    background-color: var(--table-header);
+    min-width: 100px;
+    max-width: 30vw;
+}
+
+td {
+    background-color: var(--background-secondary);
+    min-width: 100px;
+    max-width: 30vw;
+}
+
+a {
+    color: var(--test);
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.recipe {
+    position: relative;
+    user-select: none;
+}
+
+.mc_item {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+a[data]:hover:after {
+    color: red;
+}
+
+/* Item pos in the GUI */
+td[type=crafting_shaped] .slot1 {
+    position: absolute;
+    left: 11px;
+    top: 11px;
+}
+
+td[type=crafting_shaped] .slot2 {
+    position: absolute;
+    left: 47px;
+    top: 11px;
+}
+
+td[type=crafting_shaped] .slot3 {
+    position: absolute;
+    left: 83px;
+    top: 11px;
+}
+
+td[type=crafting_shaped] .slot4 {
+    position: absolute;
+    left: 11px;
+    top: 47px;
+}
+
+td[type=crafting_shaped] .slot5 {
+    position: absolute;
+    left: 47px;
+    top: 47px;
+}
+
+td[type=crafting_shaped] .slot6 {
+    position: absolute;
+    left: 83px;
+    top: 47px;
+}
+
+td[type=crafting_shaped] .slot7 {
+    position: absolute;
+    left: 11px;
+    top: 83px;
+}
+
+td[type=crafting_shaped] .slot8 {
+    position: absolute;
+    left: 47px;
+    top: 83px;
+}
+
+td[type=crafting_shaped] .slot9 {
+    position: absolute;
+    left: 83px;
+    top: 83px;
+}
+
+td[type=crafting_shaped] .result {
+    position: absolute;
+    left: 167px;
+    top: 47px;
+}
+
+td[type=crafting_shaped] .result.count {
+    position: absolute;
+    left: 1.8rem;
+    top: 1.2rem;
+}
+
+td[type=crafting_shapeless] .slot1 {
+    position: absolute;
+    left: 11px;
+    top: 11px;
+}
+
+td[type=crafting_shapeless] .slot2 {
+    position: absolute;
+    left: 47px;
+    top: 11px;
+}
+
+td[type=crafting_shapeless] .slot3 {
+    position: absolute;
+    left: 83px;
+    top: 11px;
+}
+
+td[type=crafting_shapeless] .slot4 {
+    position: absolute;
+    left: 11px;
+    top: 47px;
+}
+
+td[type=crafting_shapeless] .slot5 {
+    position: absolute;
+    left: 47px;
+    top: 47px;
+}
+
+td[type=crafting_shapeless] .slot6 {
+    position: absolute;
+    left: 83px;
+    top: 47px;
+}
+
+td[type=crafting_shapeless] .slot7 {
+    position: absolute;
+    left: 11px;
+    top: 83px;
+}
+
+td[type=crafting_shapeless] .slot8 {
+    position: absolute;
+    left: 47px;
+    top: 83px;
+}
+
+td[type=crafting_shapeless] .slot9 {
+    position: absolute;
+    left: 83px;
+    top: 83px;
+}
+
+td[type=crafting_shapeless] .result {
+    position: absolute;
+    left: 167px;
+    top: 47px;
+}
+
+td[type=crafting_shapeless] .result.count {
+    position: absolute;
+    left: 1.8rem;
+    top: 1.2rem;
+}
+
+td[type=stonecutter] .input {
+    position: absolute;
+    left: 11px;
+    top: 47px;
+}
+
+td[type=stonecutter] .preview {
+    position: absolute;
+    left: 53px;
+    top: 21px;
+}
+
+td[type=stonecutter] .result {
+    position: absolute;
+    left: 121px;
+    top: 47px;
+}
+
+td[type=stonecutter] .result.count {
+    position: absolute;
+    left: 1.8rem;
+    top: 1.2rem;
+}
+
+td[type=smithing] .base {
+    position: absolute;
+    left: 49px;
+    top: 89px;
+}
+
+td[type=smithing] .addition {
+    position: absolute;
+    left: 145px;
+    top: 89px;
+}
+
+td[type=smithing] .result {
+    position: absolute;
+    left: 261px;
+    top: 89px;
+}
+
+td[type=smelting] .input {
+    position: absolute;
+    left: 11px;
+    top: 11px;
+}
+
+td[type=smelting] .result {
+    position: absolute;
+    left: 130px;
+    top: 46px;
+}
+
+
+.description {
+    overflow-wrap: break-word;
+}
+
+.count {
+    font-family: Minecraft;
+    font-size: 20px;
+    color: white;
+    text-align: right;
+}
+
+/* Jqueryui */
+.ui-tooltip {
+    font-family: Minecraft;
+    font-size: 20px;
+    padding: 1px;
+    border-radius: 4px;
+    background-color: var(--tooltip-background);
+}
+
+.ui-tooltip-content {
+    border: 1px solid #2b0861;
+    border-radius: 4px;
+    padding: 2px;
+    background-color: var(--tooltip-background);
+    color: var(--tooltip-text);
+}
+
+/* Markdown */
+code:not(pre code) {
+    background-color: var(--background-primary);
+    border-radius: 6px;
+    padding: .2em .4em;
+}
+
+blockquote {
+    border-left: 5px solid var(--table-header);
+    background-color: var(--background-primary);
+    padding-left: .2rem;
+    margin-left: .2rem;
+    margin-right: .2rem;
+}
+
+pre {
+    background-color: var(--background-primary);
+    border-radius: .2rem;
+    padding: .2em .4em;
+}
+
+.msgbox {
+    border: 1px solid var(--msgbox-border-color);
+    border-left-width: 4px;
+    border-left-color: var(--msgbox-border-left-color);
+    margin: 1em;
+    background-color: var(--msgbox-background-color);
+    padding: 10px;
+    max-width: 50%;
+}
+
+.msgbox-icon {
+    vertical-align:middle;
+    width: 32px;
+    image-rendering: pixelated;
+    margin: .1em;
+}
+
+.msgbox-contents {
+    display: inline;
+}

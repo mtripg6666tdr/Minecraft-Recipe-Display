@@ -1,0 +1,96 @@
+{
+    "$schema": "./schema.json",
+    "description": {
+        "id": "recipe",
+        "theme": "dark",
+        "title": "Default",
+        "msgbox": "default"
+    },
+    "resources": {
+        "textures": {},
+        "langs": {},
+        "links": {}
+    },
+    "recipes": [
+        {
+            "identifier": "minecraft:cooked_beef",
+            "description": [
+                {
+                    "text": "Descriptions support",
+                    "color": "white"
+                },
+                " ",
+                {
+                    "text": "RAW JSON",
+                    "underlined": true,
+                    "clickEvent": {
+                        "action": "open_url",
+                        "value": "https://minecraft.fandom.com/wiki/Raw_JSON_text_format"
+                    }
+                }
+            ],
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "###",
+                "###"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:stone_bricks"
+                }
+            },
+            "result": {
+                "item": "minecraft:stone_brick_wall",
+                "count": 6
+            }
+        },
+        {
+            "identifier": "minecraft:flint_and_steel",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                {
+                    "item": "minecraft:flint"
+                },
+                {
+                    "item": "minecraft:iron_ingot"
+                }
+            ],
+            "result": {
+                "item": "minecraft:flint_and_steel"
+            }
+        },
+        {
+            "identifier": "minecraft:netherite_pickaxe",
+            "type": "minecraft:smithing",
+            "base": {
+                "item": "minecraft:diamond_pickaxe"
+            },
+            "addition": {
+                "item": "minecraft:netherite_ingot"
+            },
+            "result": {
+                "item": "minecraft:netherite_pickaxe"
+            }
+        },
+        {
+            "identifier": "minecraft:cooked_beef",
+            "type": "minecraft:smelting",
+            "ingredients": {
+                "item": "minecraft:beef"
+            },
+            "result": {
+                "item": "minecraft:cooked_beef"
+            }
+        },
+        {
+            "identifier": "minecraft:stone_brick_wall_from_stonecutter",
+            "type": "minecraft:stonecutting",
+            "ingredients": {
+                "item": "minecraft:stone_bricks"
+            },
+            "result": {
+                "item": "minecraft:stone_brick_wall"
+            }
+        }
+    ]
+}

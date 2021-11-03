@@ -1,0 +1,177 @@
+{
+    "$schema": "./schema.json",
+    "description": {
+        "id": "recipe",
+        "theme": "dark"
+    },
+    "resources": {
+        "textures": {
+            "morefood": {
+                "type": "spritesheet",
+                "file": "/assets/morefood.json"
+            }
+        },
+        "langs": {
+            "morefood": "/assets/morefoodlang.json#item.${NAMESPACE}.${NAME}"
+        },
+        "links": {
+            "morefood": "#${NAMESPACE}:${NAME}"
+        }
+    },
+    "recipes": [
+        {
+            "identifier": "morefood:hamburger_patty",
+            "description": {"text":"Some extra text here.","color":"white"},
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "#"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:porkchop"
+                }
+            },
+            "result": {
+                "item": "morefood:hamburger_patty"
+            }
+        },
+        {
+            "identifier": "minecraft:flint_and_steel",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                {
+                    "item": "minecraft:iron_ingot",
+                    "count": 1
+                },
+                {
+                    "item": "minecraft:flint"
+                }
+            ],
+            "result": {
+                "item": "minecraft:flint_and_steel",
+                "count": 5
+            }
+        },
+        {
+            "identifier": "minecraft:netherite_ingot",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [
+                {
+                    "item": "minecraft:netherite_scrap",
+                    "count": 4
+                },
+                {
+                    "item": "minecraft:gold_ingot",
+                    "count": 4
+                }
+            ],
+            "result": {
+                "item": "minecraft:netherite_ingot"
+            }
+        },
+        {
+            "identifier": "morefood:cooked_bacon",
+            "type": "minecraft:smoking",
+            "cookingtime": 200,
+            "experience": 0.1,
+            "ingredients": {
+                "item": "morefood:bacon"
+            },
+            "result": {
+                "item": "morefood:cooked_bacon"
+            }
+        },
+        {
+            "identifier": "recipe:test_blasting",
+            "type": "minecraft:blasting",
+            "cookingtime": 200,
+            "experience": 0.1,
+            "ingredients": {
+                "item": "minecraft:iron_ore"
+            },
+            "result": {
+                "item": "minecraft:iron_ingot"
+            }
+        },
+        {
+            "identifier": "recipe:test_smoking",
+            "type": "minecraft:smoking",
+            "cookingtime": 200,
+            "experience": 0.1,
+            "ingredients": {
+                "item": "minecraft:cod"
+            },
+            "result": {
+                "item": "minecraft:cooked_cod"
+            }
+        },
+        {
+            "identifier": "recipe:test_campfire_cooking",
+            "type": "minecraft:campfire_cooking",
+            "cookingtime": 200,
+            "experience": 0.1,
+            "ingredients": {
+                "item": "minecraft:cod"
+            },
+            "result": {
+                "item": "minecraft:cooked_cod"
+            }
+        },
+        {
+            "identifier": "recipe:test_stonecutting",
+            "type": "minecraft:stonecutting",
+            "ingredients": {
+                "item": "minecraft:stone"
+            },
+            "result": {
+                "item": "minecraft:stone_bricks"
+            },
+            "count": 2
+        },
+        {
+            "identifier": "recipe:test_smithing",
+            "type": "minecraft:smithing",
+            "base": {
+                "item": "minecraft:diamond_sword"
+            },
+            "addition": {
+                "item": "minecraft:netherite_ingot"
+            },
+            "result": {
+                "item": "minecraft:netherite_sword"
+            }
+        },
+        {
+            "identifier": "morefood:bacon",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "###"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:porkchop"
+                }
+            },
+            "result": {
+                "item": "morefood:bacon"
+            }
+        },
+        {
+            "identifier": "morefood:hamburger",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "   ",
+                " # ",
+                "   "
+            ],
+            "key": {
+                "#": {
+                    "item": "morefood:hamburger_patty"
+                }
+            },
+            "result": {
+                "item": "morefood:hamburger"
+            }
+        }
+    ]
+}

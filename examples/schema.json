@@ -1,0 +1,512 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "default": {},
+    "required": [
+        "description"
+    ],
+    "properties": {
+        "resources": {
+            "description": "A list of resrouce locations for tags, textures, and lang files.",
+            "type": "object",
+            "default": {},
+            "additionalProperties": false,
+            "properties": {
+                "textures": {
+                    "description": "A list of texture locations for the namespaced id.",
+                    "type": "object",
+                    "default": {},
+                    "additionalProperties": {
+                        "description": "The namespaced id to use for this texture location.",
+                        "type": [
+                            "string",
+                            "object"
+                        ],
+                        "required": [
+                            "type",
+                            "file"
+                        ],
+                        "properties": {
+                            "type": {
+                                "description": "The type of resoruce to use.",
+                                "enum": [
+                                    "spritesheet"
+                                ]
+                            },
+                            "file": {
+                                "description": "The JSON file to get the spritesheet from.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "properties": {
+                        "minecraft": {
+                            "description": "Default location",
+                            "type": [
+                                "string",
+                                "object"
+                            ],
+                            "default": {
+                                "type": "spritesheet"
+                            },
+                            "properties": {
+                                "type": {
+                                    "description": "The type of resoruce to use.",
+                                    "default": "spritesheet",
+                                    "enum": [
+                                        "spritesheet"
+                                    ]
+                                },
+                                "file": {
+                                    "description": "The JSON file to get the spritesheet from.",
+                                    "type": "string",
+                                    "default": "https://cdn.jsdelivr.net/gh/legopitstop/Javascript/libs/Sprite/minecraft/sprite.json"
+                                }
+                            }
+                        }
+                    }
+                },
+                "langs": {
+                    "description": "A list of lang locations for the namespaced id.",
+                    "type": "object",
+                    "default": {},
+                    "additionalProperties": {
+                        "description": "The namespaced id to use for this lang location.",
+                        "type": "string"
+                    },
+                    "properties": {
+                        "minecraft": {
+                            "description": "Default location",
+                            "type": "string",
+                            "default": "/assets/1.17/assets/${NAMESPACEID}/lang/en_us.json"
+                        }
+                    }
+                },
+                "links": {
+                    "description": "A list of link locations for the namespaced id.",
+                    "type": "object",
+                    "default": {},
+                    "additionalProperties": {
+                        "description": "The namespaced id to use for this link location.",
+                        "type": "string"
+                    },
+                    "properties": {
+                        "minecraft": {
+                            "description": "Default link",
+                            "type": "string",
+                            "default": "https://minecraft.fandom.com/wiki/${WIKINAME}"
+                        }
+                    }
+                }
+            }
+        },
+        "description": {
+            "title": "COMMON",
+            "description": "Data that may be needed.",
+            "type": "object",
+            "default": {},
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "theme": {
+                    "description": "The theme to use for the GUI.",
+                    "enum": [
+                        "light",
+                        "dark"
+                    ]
+                },
+                "id": {
+                    "description": "The id that will be used to apply the recipes. You must have an empty div that matches this id inside the HTML.",
+                    "default": "recipe",
+                    "enum": [
+                        "recipe"
+                    ]
+                },
+                "title": {
+                    "description": "The tab title in the browser. Will end with '| recipes'",
+                    "type": "string"
+                },
+                "msgbox": {
+                    "description": "A msg box to display text to the user",
+                    "type": [
+                        "object",
+                        "array"
+                    ],
+                    "items": {
+                        "$ref": "#/properties/description/properties/msgbox"
+                    },
+                    "required": [
+                        "contents"
+                    ],
+                    "properties": {
+                        "color": {
+                            "description": "The hex color to use for the msgbox.",
+                            "type": "string"
+                        },
+                        "icon": {
+                            "description": "The icon to use for the msgbox.",
+                            "type": "string"
+                        },
+                        "contents": {
+                            "description": "The contents of the msgbox.",
+                            "$ref": "https://cdn.jsdelivr.net/gh/legopitstop/Javascript/libs/rawjson/schema.json"
+                        }
+                    }
+                }
+            }
+        },
+        "recipes": {
+            "description": "A list of recipes to add to the document.",
+            "type": "array",
+            "default": [],
+            "items": {
+                "type": "object",
+                "default": {},
+                "required": [
+                    "type",
+                    "identifier"
+                ],
+                "anyOf": [
+                    {
+                        "if": {
+                            "properties": {
+                                "type": {
+                                    "const": "minecraft:crafting_shaped"
+                                }
+                            }
+                        },
+                        "then": {
+                            "required": [
+                                "pattern",
+                                "key",
+                                "result"
+                            ]
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "type": {
+                                    "const": "minecraft:crafting_shapeless"
+                                }
+                            }
+                        },
+                        "then": {
+                            "required": [
+                                "ingredients",
+                                "result"
+                            ]
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "type": {
+                                    "const": [
+                                        "minecraft:smelting",
+                                        "minecraft:blasting",
+                                        "minecraft:smoking"
+                                    ]
+                                }
+                            }
+                        },
+                        "then": {
+                            "required": [
+                                "ingredients",
+                                "result"
+                            ]
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "type": {
+                                    "const": "minecraft:stonecutting"
+                                }
+                            }
+                        },
+                        "then": {
+                            "required": [
+                                "ingredients",
+                                "result"
+                            ]
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "type": {
+                                    "const": "minecraft:smithing"
+                                }
+                            }
+                        },
+                        "then": {
+                            "required": [
+                                "base",
+                                "addition",
+                                "result"
+                            ]
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "type": {
+                                    "const": "rcore:custom"
+                                }
+                            }
+                        },
+                        "then": {
+                            "required": [
+                                "command"
+                            ]
+                        }
+                    }
+                ],
+                "properties": {
+                    "description": {
+                        "title": "COMMON",
+                        "description": "The description of the recipe. Supports RAW JSON",
+                        "$ref": "https://cdn.jsdelivr.net/gh/legopitstop/Javascript/libs/rawjson/schema.json"
+                    },
+                    "identifier": {
+                        "title": "COMMON",
+                        "description": "It is recomnded to include an id for your recipe, It can be useful for debuging if you are missing a required key.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "COMMON",
+                        "description": "The type of recipe to use.",
+                        "enum": [
+                            "minecraft:crafting_shaped",
+                            "minecraft:crafting_shapeless",
+                            "minecraft:smelting",
+                            "minecraft:blasting",
+                            "minecraft:smoking",
+                            "minecraft:campfire_cooking",
+                            "minecraft:stonecutting",
+                            "minecraft:smithing",
+                            "rcore:custom"
+                        ]
+                    },
+                    "command": {
+                        "title": "RCORE",
+                        "description": "The recipe command.",
+                        "type": "string"
+                    },
+                    "group": {
+                        "title": "COMMON",
+                        "description": "The group to place this recipe in.",
+                        "type": "string"
+                    },
+                    "ingredients": {
+                        "title": "CRAFTING_SHAPELESS, SMELTING, BLASTING, SMOKING, CAMPFIRE_COOKING, STONECUTTING",
+                        "description": "A list of ingredients",
+                        "anyOf": [
+                            {
+                                "type": "array",
+                                "default": [],
+                                "minItems": 1,
+                                "maxItems": 9,
+                                "items": {
+                                    "type": "object",
+                                    "default": {},
+                                    "properties": {
+                                        "item": {
+                                            "description": "The item to use.",
+                                            "type": "string",
+                                            "$ref": "https://raw.githubusercontent.com/legopitstop/JSON-Schemas/main/minecraft/java-edition/items.json#/definitions/MinecraftItemExamples"
+                                        },
+                                        "tag": {
+                                            "description": "The item tag to use.",
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "description": "(optional) The item url to go to.",
+                                            "type": "string"
+                                        },
+                                        "count": {
+                                            "description": "The number of items to use.",
+                                            "type": "integer",
+                                            "default": 1,
+                                            "minimum": 0,
+                                            "maximum": 64
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "default": {},
+                                "properties": {
+                                    "item": {
+                                        "description": "The item to use.",
+                                        "type": "string",
+                                        "$ref": "https://raw.githubusercontent.com/legopitstop/JSON-Schemas/main/minecraft/java-edition/items.json#/definitions/MinecraftItemExamples"
+                                    },
+                                    "tag": {
+                                        "description": "The item tag to use.",
+                                        "type": "string"
+                                    },
+                                    "url": {
+                                        "description": "(optional) The item url to go to.",
+                                        "type": "string"
+                                    },
+                                    "count": {
+                                        "description": "The number of items to use.",
+                                        "type": "integer",
+                                        "default": 1,
+                                        "minimum": 0,
+                                        "maximum": 64
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "pattern": {
+                        "title": "CRAFTING_SHAPED",
+                        "description": "The pattern to insert the keys.",
+                        "type": "array",
+                        "default": [],
+                        "minItems": 1,
+                        "maxItems": 3,
+                        "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 3
+                        }
+                    },
+                    "key": {
+                        "title": "CRAFTING_SHAPED",
+                        "description": "Contains the keys for the pattern.",
+                        "type": "object",
+                        "default": {},
+                        "additionalProperties": false,
+                        "patternProperties": {
+                            "^[A-Za-z0-9#]$": {
+                                "description": "The item to apply to the pattern character",
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "default": {},
+                                        "properties": {
+                                            "item": {
+                                                "description": "The item to use.",
+                                                "type": "string",
+                                                "$ref": "https://raw.githubusercontent.com/legopitstop/JSON-Schemas/main/minecraft/java-edition/items.json#/definitions/MinecraftItemExamples"
+                                            },
+                                            "tag": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "array",
+                                        "default": [],
+                                        "items": {
+                                            "default": {},
+                                            "properties": {
+                                                "item": {
+                                                    "description": "The item to use.",
+                                                    "type": "string",
+                                                    "$ref": "https://raw.githubusercontent.com/legopitstop/JSON-Schemas/main/minecraft/java-edition/items.json#/definitions/MinecraftItemExamples"
+                                                },
+                                                "tag": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "experience": {
+                        "title": "SMELTING, BLASTING, SMOKING, CAMPFIRE_COOKING",
+                        "description": "The amount of experiance you get from smelting an item.",
+                        "type": "number",
+                        "default": 0.1
+                    },
+                    "cookingtime": {
+                        "title": "SMELTING, BLASTING, SMOKING, CAMPFIRE_COOKING",
+                        "description": "The number of ticks it takes to cook this item.",
+                        "type": "integer",
+                        "default": 200
+                    },
+                    "base": {
+                        "title": "SMITHING",
+                        "description": "The base item",
+                        "type": "object",
+                        "default": {},
+                        "properties": {
+                            "item": {
+                                "description": "The item to use.",
+                                "type": "string",
+                                "$ref": "https://raw.githubusercontent.com/legopitstop/JSON-Schemas/main/minecraft/java-edition/items.json#/definitions/MinecraftItemExamples"
+                            },
+                            "tag": {
+                                "description": "The item tag to use.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "addition": {
+                        "title": "SMITHING",
+                        "description": "The item that you add to the base item.",
+                        "type": "object",
+                        "default": {},
+                        "properties": {
+                            "item": {
+                                "description": "The item to use.",
+                                "type": "string",
+                                "$ref": "https://raw.githubusercontent.com/legopitstop/JSON-Schemas/main/minecraft/java-edition/items.json#/definitions/MinecraftItemExamples"
+                            },
+                            "tag": {
+                                "description": "The item tag to use.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "result": {
+                        "title": "COMMON",
+                        "description": "The resulting recipe.",
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "default": {},
+                                "properties": {
+                                    "item": {
+                                        "description": "The item to give.",
+                                        "type": "string",
+                                        "$ref": "https://raw.githubusercontent.com/legopitstop/JSON-Schemas/main/minecraft/java-edition/items.json#/definitions/MinecraftItemExamples"
+                                    },
+                                    "count": {
+                                        "description": "The number of items to give.",
+                                        "type": "integer",
+                                        "default": 1,
+                                        "minimum": 0,
+                                        "maximum": 64
+                                    }
+                                }
+                            },
+                            {
+                                "type": "string",
+                                "description": "The item to give.",
+                                "$ref": "https://raw.githubusercontent.com/legopitstop/JSON-Schemas/main/minecraft/java-edition/items.json#/definitions/MinecraftItemExamples"
+                            }
+                        ]
+                    },
+                    "count": {
+                        "title": "STONECUTTING",
+                        "description": "The number of items to give.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 0,
+                        "maximum": 64
+                    }
+                }
+            }
+        }
+    }
+}
