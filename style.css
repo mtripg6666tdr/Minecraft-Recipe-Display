@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Minecraft;
-    src: url(/theme/minecraft_font.otf);
+    src: url(./assets/minecraft_font.otf);
 }
 
 :root.dark {
