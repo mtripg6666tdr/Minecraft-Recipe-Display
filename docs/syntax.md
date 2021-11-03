@@ -15,6 +15,7 @@ Below you can find the syntax for the JSON recipe.
 - [Recipes](#recipes)
     - [Recipe Type](#recipe-type)
     - [minecraft:crafting_shaped](#crafting-shaped)
+    - [minecraft:crafting_shapeless](#crafting-shapeless)
     - [minecraft:smelting](#smelting)
     - [minecraft:blasting](#blasting)
     - [minecraft:smoking](#smoking)
@@ -203,12 +204,13 @@ Recipe schema is similar to Minecraft Java Edition's
 ### Crafting Shapeless
 Additional properties
 
-| Required | Name                  | Type                                                               | Description                   |
-|----------|-----------------------|--------------------------------------------------------------------|-------------------------------|
-| Yes      | identifier   | String                                                             | The id of the recipe          |
-| No       | description  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
-| Yes      | [ingredients](#item)  | Array                                                              | A list of ingredients         |
-| Yes      | [result](#item-count) | Object                                                             | The resulting recipe.         |
+| Required | Name | Type | Description |
+|--|--|--|--|
+| Yes | identifier | String | The id of the recipe |
+| No | description | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| Yes | [ingredients](#item) | Array | A list of ingredients |
+| Yes | [result](#item-count) | Object | The resulting recipe. |
+
 #### Example
 ```json
 {
@@ -236,13 +238,13 @@ Additional properties
 ### Crafting Shaped
 Additional properties
 
-| Required | Name                  | Type                                                               | Description                        |
-|----------|-----------------------|--------------------------------------------------------------------|------------------------------------|
-| Yes      | identifier            | String                                                             | The id of the recipe               |
-| No       | description           | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe      |
-| Yes      | [pattern](#pattern)   | Array                                                              | The pattern to insert the keys.    |
-| Yes      | [key](#key)           | Object                                                             | Contains the keys for the pattern. |
-| Yes      | [result](#item-count) | Object                                                             | The resulting recipe.              |
+| Required | Name | Type | Description |
+|--|--|--|--|
+| Yes | identifier | String | The id of the recipe |
+| No | description | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| Yes | [pattern](#pattern) | Array | The pattern to insert the keys. |
+| Yes | [key](#key) | Object | Contains the keys for the pattern. |
+| Yes | [result](#item-count) | Object | The resulting recipe. |
 
 #### Example
 ```json
@@ -278,6 +280,7 @@ Additional properties
 | No | experience | `0.1` | Number | The amount of experiance you get from smelting an item. |
 | No | cookingtime | `200` | Number | The number of ticks it takes to cook this item. |
 | Yes | [result](#item) |  | Object | The resulting recipe. |
+
 #### Example
 ```json
 {
@@ -307,6 +310,7 @@ Additional properties
 | No | experience | `0.1` | Number | The amount of experiance you get from smelting an item. |
 | No | cookingtime | `200` | Number | The number of ticks it takes to cook this item. |
 | Yes | [result](#item) |  | Object | The resulting recipe. |
+
 #### Example
 ```json
 {
@@ -336,6 +340,7 @@ Additional properties
 | No | experience | `0.1` | Number | The amount of experiance you get from smelting an item. |
 | No | cookingtime | `200` | Number | The number of ticks it takes to cook this item. |
 | Yes | [result](#item) |  | Object | The resulting recipe. |
+
 #### Example
 ```json
 {
@@ -365,6 +370,7 @@ Additional properties
 | No | experience | `0.1` | Number | The amount of experiance you get from smelting an item. |
 | No | cookingtime | `200` | Number | The number of ticks it takes to cook this item. |
 | Yes | [result](#item) |  | Object | The resulting recipe. |
+
 #### Example
 ```json
 {
@@ -393,6 +399,7 @@ Additional properties
 | Yes | [ingredients](#item) |  | Object | A list of ingredients |
 | No | count | `1` | Integer [`1-64`] | The number of items to give. |
 | Yes | [result]((#item-count)) |  | Object | The resulting recipe. |
+
 #### Example
 ```json
 {
@@ -420,6 +427,7 @@ Additional properties
 | Yes | [base](#item) |  | Object | The base item |
 | Yes | [addition](#item) |  | Object | The item that you add to the base item. |
 | Yes | [result](#item-count) |  | Object | The resulting recipe. |
+
 #### Example
 ```json
 {
@@ -440,10 +448,12 @@ Additional properties
 ---
 
 ### Item Count
-| Required | Name  | Default | Type             | Description                  |
-|----------|-------|---------|------------------|------------------------------|
-| Yes      | item  |         | String           | The item to give.            |
-| No       | count | `1`     | Integer [`1-64`] | The number of items to give. |
+
+| Required | Name | Default | Type | Description |
+|--|--|--|--|--|
+| Yes | item |  | String | The item to give. |
+| No | count | `1` | Integer [`1-64`] | The number of items to give. |
+
 #### Example
 ```json
 {
@@ -456,9 +466,11 @@ Additional properties
 ---
 
 ### Item
-| Required | Name  | Default | Type             | Description                  |
-|----------|-------|---------|------------------|------------------------------|
-| Yes      | item  |         | String           | The item to give.            |
+
+| Required | Name | Default | Type | Description |
+|--|--|--|--|--|
+| Yes | item |  | String | The item to give. |
+
 #### Example
 ```json
 "item": "minecraft:stone"
@@ -516,11 +528,11 @@ Additional properties
 
 ### Msgbox
 
-| Required | Name     | Default | Type         | Description                                     |
-|----------|----------|---------|--------------|-------------------------------------------------|
-| No       | icon     |         | String       | The image to use as a icon.                     |
-| No       | color    |         | String       | The color for the msgbox. Must be a 6 digit hex |
-| Yes      | contents |         | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The contents of the msgbox, supports RAW JSON   |
+| Required | Name | Default | Type | Description |
+|--|--|--|--|--|
+| No | icon |  | String | The image to use as a icon. |
+| No | color |  | String | The color for the msgbox. Must be a 6 digit hex |
+| Yes | contents |  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The contents of the msgbox, supports RAW JSON |
 
 #### Examples
 ```json
