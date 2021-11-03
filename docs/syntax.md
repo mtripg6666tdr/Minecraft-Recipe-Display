@@ -1,7 +1,10 @@
 # Syntax
 Below you can find the syntax for the JSON recipe.
 
+
+
 ## Table of Contents
+- [JSON Schema](#json-schema)
 - [Root](#root)
 - [Example](#example)
 - [Description](#description)
@@ -23,6 +26,13 @@ Below you can find the syntax for the JSON recipe.
     - [Pattern](#pattern)
     - [Key](#key)
     - [msgbox](#msgbox)
+
+## JSON Schema
+```json
+{
+    "$schema": "https://legopitstop.github.io/Minecraft-Recipe-Display/examples/schema.json"
+}
+```
 
 ## Root
 

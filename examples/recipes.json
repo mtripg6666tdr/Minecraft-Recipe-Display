@@ -1,5 +1,5 @@
 {
-    "$schema": "./schema.json",
+    "$schema": "https://legopitstop.github.io/Minecraft-Recipe-Display/examples/schema.json",
     "description": {
         "id": "recipe",
         "theme": "dark"
