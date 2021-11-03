@@ -1,6 +1,5 @@
 
-// http://127.0.0.1:5555/index.html?json=./examples/morefood.json&lang=en_us
-// <iframe src="http://legopitstop.github.io/recipe-viewer/index.html?RECIPESJSON=https://example.com/recipes.json&lang=en_us" frameborder="0"></iframe>
+// https://legopitstop.github.io/Minecraft-Recipe-Display/index.html?json=./examples/morefood.json&lang=en_us
 
 const JSONURL = parseURLParams(location.search)
 const RECIPES = getJSONURL()
@@ -124,7 +123,7 @@ function renderRecipes() {
 
             /* resources */
             file.resources.textures.minecraft = { type: "spritesheet", file: "https://cdn.jsdelivr.net/gh/legopitstop/Javascript/libs/Sprite/minecraft/sprite.json" }
-            file.resources.langs.minecraft = '/assets/${NAMESPACE}/lang/en_us.json#item.${NAMESPACE}.${NAME}'
+            file.resources.langs.minecraft = './assets/${NAMESPACE}/lang/en_us.json#item.${NAMESPACE}.${NAME}'
 
             document.querySelector('#' + recipeFileUUID).innerHTML = '<!-- Injected by recipe.js --><tbody><table class="recipe-table" id="' + UUID + '"><tr><th>Ingredients</th><th>Crafting recipe</th><th>Description</th></tr><!-- recipes here --></table></tbody>'
             /* recipes */
@@ -379,7 +378,7 @@ function assetBuilder(json, item, id) {
                 }
 
             } else if (typeof T == 'string') {
-                if (T) { var Resource = T } else { var Resource = '/assets/${NAMESPACE}/textures/item/${NAME}.png' };
+                if (T) { var Resource = T } else { var Resource = './assets/${NAMESPACE}/textures/item/${NAME}.png' };
                 var imageFile = resourceVarables(Resource, item);
                 return imageFile;
             }
@@ -392,7 +391,7 @@ function translateName(item) {
 }
 
 function setTranslateName(id, json, item, target) {
-    var lang = '/assets/${NAMESPACE}/lang/en_us.json#item.${NAMESPACE}.${NAME}'
+    var lang = './assets/${NAMESPACE}/lang/en_us.json#item.${NAMESPACE}.${NAME}'
     if (json.resources) {
         if (json.resources.langs[getItemNamespace(item)]) {
             lang = json.resources.langs[getItemNamespace(item)]
