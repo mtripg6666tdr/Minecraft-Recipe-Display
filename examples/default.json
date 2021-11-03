@@ -3,8 +3,13 @@
     "description": {
         "id": "recipe",
         "theme": "dark",
-        "title": "Default",
-        "msgbox": "default"
+        "msgbox": "default",
+        "meta": {
+            "title": "Minecraft Recipe Display",
+            "description": "Easily create a webpage that will display all your recipes!",
+            "url": "https://legopitstop.github.io/Minecraft-Recipe-Display/",
+            "image": "./assets/favicon.png"
+        }
     },
     "resources": {
         "textures": {},

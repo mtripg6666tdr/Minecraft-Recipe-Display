@@ -123,9 +123,28 @@
                         "recipe"
                     ]
                 },
-                "title": {
-                    "description": "The tab title in the browser. Will end with '| recipes'",
-                    "type": "string"
+                "meta": {
+                    "description": "meta data for browsers.",
+                    "type": "object",
+                    "default": {},
+                    "properties": {
+                        "title": {
+                            "description": "The tab title in the browser. Will end with '| recipes'",
+                            "type": "string"
+                        },
+                        "description": {
+                            "description": "The long description for browsers",
+                            "type":"string"
+                        },
+                        "url": {
+                            "description": "The url",
+                            "type":"string"
+                        },
+                        "image": {
+                            "description": "The image to show",
+                            "type":"string"
+                        }
+                    }
                 },
                 "msgbox": {
                     "description": "A msg box to display text to the user",
