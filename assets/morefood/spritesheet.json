@@ -1,6 +1,6 @@
 {
     "$schema": "https://cdn.jsdelivr.net/gh/legopitstop/Javascript/libs/Sprite/schema.json",
-    "file": "./assets/morefood_spritesheet.png",
+    "file": "./assets/morefood/spritesheet.png",
     "height": 32,
     "width": 32,
     "textures": {

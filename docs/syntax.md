@@ -31,7 +31,7 @@ Below you can find the syntax for the JSON recipe.
 ## JSON Schema
 ```json
 {
-    "$schema": "https://legopitstop.github.io/Minecraft-Recipe-Display/examples/schema.json"
+    "$schema": "https://legopitstop.github.io/Minecraft-Recipe-Display/schema.json"
 }
 ```
 

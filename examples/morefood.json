@@ -1,6 +1,5 @@
 {
-    "$schema": "https://legopitstop.github.io/Minecraft-Recipe-Display/examples/schema.json",
-    "url": "http://legopitstop.github.io/Minecraft-Recipe-Display/index.html?json=./Minecraft-Recipe-Display/examples/morefood.json&lang=en_us",
+    "$schema": "https://legopitstop.github.io/Minecraft-Recipe-Display/schema.json",
     "description": {
         "title": "Lot's More Food",
         "id": "recipe",
@@ -10,11 +9,11 @@
         "textures": {
             "morefood": {
                 "type": "spritesheet",
-                "file": "./Minecraft-Recipe-Display/assets/morefood.json"
+                "file": "./assets/morefood/spritesheet.json"
             }
         },
         "langs": {
-            "morefood": "./Minecraft-Recipe-Display/assets/morefoodlang.json#item.${NAMESPACE}.${NAME}"
+            "morefood": "./assets/morefood/en_us.json#item.${NAMESPACE}.${NAME}"
         },
         "links": {
             "morefood": "#${NAMESPACE}:${NAME}"

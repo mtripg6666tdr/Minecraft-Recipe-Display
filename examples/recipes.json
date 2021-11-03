@@ -1,5 +1,5 @@
 {
-    "$schema": "https://legopitstop.github.io/Minecraft-Recipe-Display/examples/schema.json",
+    "$schema": "https://legopitstop.github.io/Minecraft-Recipe-Display/schema.json",
     "description": {
         "id": "recipe",
         "theme": "dark"
@@ -8,11 +8,11 @@
         "textures": {
             "morefood": {
                 "type": "spritesheet",
-                "file": "/assets/morefood.json"
+                "file": "./assets/morefood/spritesheet.json"
             }
         },
         "langs": {
-            "morefood": "/assets/morefoodlang.json#item.${NAMESPACE}.${NAME}"
+            "morefood": "./assets/morefood/en_us.json#item.${NAMESPACE}.${NAME}"
         },
         "links": {
             "morefood": "#${NAMESPACE}:${NAME}"
@@ -21,7 +21,10 @@
     "recipes": [
         {
             "identifier": "morefood:hamburger_patty",
-            "description": {"text":"Some extra text here.","color":"white"},
+            "description": {
+                "text": "Some extra text here.",
+                "color": "white"
+            },
             "type": "minecraft:crafting_shaped",
             "pattern": [
                 "#"
