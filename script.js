@@ -4,6 +4,24 @@
 const JSONURL = parseURLParams(location.search)
 const RECIPES = getJSONURL()
 
+const fetched = {};
+
+function getFetchedJSON(url, callback){
+    if(fetched[url]){
+        if(fetched[url].data){
+            callback.bind($)(JSON.parse(JSON.stringify(fetched[url].data)));
+        }else{
+            fetched[url].callbacks.push(callback)
+        }
+    }else{
+        fetched[url] = {data:null, callbacks:[callback]};
+        $.getJSON(url, function(result){
+            fetched[url].data = JSON.parse(JSON.stringify(result));
+            fetched[url].callbacks.forEach(c => c.bind($)(JSON.parse(JSON.stringify(result))));
+        });
+    }
+}
+
 /* Jqueryui */
 $(function () {
     $(document).tooltip({
@@ -64,7 +82,7 @@ function msgbox(msg) {
 
 function renderRecipes() {
     var UUID = randomId();
-    $.getJSON(RECIPES, function (file) {
+    getFetchedJSON(RECIPES, function (file) {
         if (file.description) {
             /* meta */
             if (file.description.meta) {
@@ -378,7 +396,7 @@ function tagBuilder(json, tag) {
     var tags = json.resources.tags[getItemNamespace(tag)] || '/data/${NAMESPACE}/tags/items/${NAME}.json'
     //var tagFile2 = tags.replace(/\$\{NAMESPACE\}/g, getItemNamespace(tag)).replace(/\$\{NAME\}/g, getItemName(tag))
     var tagFile = resourceVarables(tags, tag)
-    $.getJSON(tagFile, function (json) {
+    getFetchedJSON(tagFile, function (json) {
         return json.values
     });
 }
@@ -393,7 +411,7 @@ function assetBuilder(json, item, id) {
                         if (T.file) {
                             // HERE
                             // document.getElementById('item-'+id).remove();
-                            $.getJSON(T.file, function (s) {
+                            getFetchedJSON(T.file, function (s) {
                                 loadSprite(item, '#item-' + id, s)
                             });
                             return '';
@@ -435,7 +453,7 @@ function setTranslateName(id, json, item, target) {
     function testTrans(id, json) {
         var file = json.replace(/#.*/g, '')
         var name = json.replace(/.*#/g, '')
-        $.getJSON(file, function (lang) {
+        getFetchedJSON(file, function (lang) {
             var getLang = lang[name] || name
             if (getLang == undefined) { var out = name } else { var out = getLang }
             if (typeof target == 'object') {
@@ -491,7 +509,7 @@ function ingredientsBuilder(json, recipes) {
 };
 
 function urlBuilder(item, id) {
-    $.getJSON(RECIPES, function (R) {
+    getFetchedJSON(RECIPES, function(R){
         if (!R.resources.links.minecraft) { R.resources.links.minecraft = "https://${NAMESPACE}.fandom.com/wiki/${WIKINAME}" } else { console.warn('Missing resoruce "minecraft".') }
         if (R.resources.links[getItemNamespace(item)]) {
             var links = R.resources.links[getItemNamespace(item)];
@@ -500,12 +518,12 @@ function urlBuilder(item, id) {
             var regex = /\#.*/;
             if (links.match(regex)) {
                 var getarable = URL.replace(/.*#/g, '');
-                document.getElementById(id).removeAttribute("href");
+                document.getElementById(id)?.removeAttribute("href");
                 $('#' + id).click(function () {
                     scrollToId(getarable, true);
                 });
             } else {
-                document.getElementById(id).href = URL;
+                (document.getElementById(id) || {}).href = URL;
             }
         } else {
             console.warn(`Missing property "${getItemNamespace(item)}"."`)
