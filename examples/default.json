@@ -30,7 +30,7 @@
                     "underlined": true,
                     "clickEvent": {
                         "action": "open_url",
-                        "value": "https://minecraft.fandom.com/wiki/Raw_JSON_text_format"
+                        "value": "https://minecraft.wiki/w/Raw_JSON_text_format"
                     }
                 }
             ],
