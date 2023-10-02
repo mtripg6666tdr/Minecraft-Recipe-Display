@@ -30,7 +30,7 @@ Includes, but not limited to the following;
 * Server Plugins
 
 ### **"personal/private server"**
-These are servers that players can make on their own. Usually, the link is private, shared only with friends and family.[<sup>[1]](https://minecraft.gamepedia.com/Server#Types_of_servers "Go to minecraft.gamepedia.com")
+These are servers that players can make on their own. Usually, the link is private, shared only with friends and family.[<sup>[1]](https://minecraft.wiki/w/Server#Types_of_servers "Go to minecraft.wiki")
 
 ### **"commercial purposes"**
 prohibit uses that are primarily intended for or directed toward commercial advantage or monetary compensation.

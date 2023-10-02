@@ -94,7 +94,7 @@
                         "minecraft": {
                             "description": "Default link",
                             "type": "string",
-                            "default": "https://minecraft.fandom.com/wiki/${WIKINAME}"
+                            "default": "https://minecraft.wiki/w/${WIKINAME}"
                         }
                     }
                 }

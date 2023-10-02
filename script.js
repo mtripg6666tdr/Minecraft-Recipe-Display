@@ -237,7 +237,7 @@ function renderRecipes() {
                                             if (R.result.item) {
                                                 Return = itemBuilder(file, R.ingredients.item, 'input') + itemBuilder(file, R.result.item, 'result')
                                                 Type = 'smelting'
-                                                Ingredients = ingredientsBuilder(file, R.ingredients) + ` + Any <a href="https://minecraft.fandom.com/wiki/Fuel" target="_blank">fuel</a>`
+                                                Ingredients = ingredientsBuilder(file, R.ingredients) + ` + Any <a href="https://minecraft.wiki/w/Fuel" target="_blank">fuel</a>`
 
                                             } else {
                                                 console.warn('Missing property "item".')
@@ -254,7 +254,7 @@ function renderRecipes() {
                                             if (R.result.item) {
                                                 Return = itemBuilder(file, R.ingredients.item, 'input') + itemBuilder(file, R.result.item, 'result')
                                                 Type = 'smelting'
-                                                Ingredients = ingredientsBuilder(file, R.ingredients) + ` + Any <a href="https://minecraft.fandom.com/wiki/Fuel" target="_blank">fuel</a>`
+                                                Ingredients = ingredientsBuilder(file, R.ingredients) + ` + Any <a href="https://minecraft.wiki/w/Fuel" target="_blank">fuel</a>`
 
                                             } else {
                                                 console.warn('Missing property "item".')
@@ -271,7 +271,7 @@ function renderRecipes() {
                                             if (R.result.item) {
                                                 Return = itemBuilder(file, R.ingredients.item, 'input') + itemBuilder(file, R.result.item, 'result')
                                                 Type = 'smelting'
-                                                Ingredients = ingredientsBuilder(file, R.ingredients) + ` + Any <a href="https://minecraft.fandom.com/wiki/Fuel" target="_blank">fuel</a>`
+                                                Ingredients = ingredientsBuilder(file, R.ingredients) + ` + Any <a href="https://minecraft.wiki/w/Fuel" target="_blank">fuel</a>`
 
                                             } else {
                                                 console.warn('Missing property "item".')
@@ -288,7 +288,7 @@ function renderRecipes() {
                                             if (R.result.item) {
                                                 Return = itemBuilder(file, R.ingredients.item, 'input') + itemBuilder(file, R.result.item, 'result')
                                                 Type = 'smelting'
-                                                Ingredients = ingredientsBuilder(file, R.ingredients) + ` + Any <a href="https://minecraft.fandom.com/wiki/Fuel" target="_blank">fuel</a>`
+                                                Ingredients = ingredientsBuilder(file, R.ingredients) + ` + Any <a href="https://minecraft.wiki/w/Fuel" target="_blank">fuel</a>`
 
                                             } else {
                                                 console.warn('Missing property "item".')

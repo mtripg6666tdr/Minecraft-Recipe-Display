@@ -83,7 +83,7 @@ Where to get diffrent resrouces depending on the item namespace id.
             "minecraft": ""
         },
         "links": {
-            "minecraft": "https://minecraft.fandom.com/wiki/${NAME.WIKI}"
+            "minecraft": "https://minecraft.wiki/w/${NAME.WIKI}"
         }
     }
 }
@@ -143,14 +143,14 @@ A map of the namespace id and the file location/url to link to.
 
 | Name | Default | Type | Description |
 |--|--|--|--|
-| `minecraft` | `https://minecraft.fandom.com/wiki/${NAME.WIKI}` | [String](#varables) | Built-in location to get langs |
+| `minecraft` | `https://minecraft.wiki/w/${NAME.WIKI}` | [String](#varables) | Built-in location to get langs |
 | `<namespace>` |  | [String](#varables) | The location to get the langs |
 
 #### Examples
 ```json
 {
     "links": {
-        "minecraft": "https://minecraft.fandom.com/wiki/${NAME.WIKI}"
+        "minecraft": "https://minecraft.wiki/w/${NAME.WIKI}"
     }
 }
 ```
@@ -207,7 +207,7 @@ Additional properties
 | Required | Name | Type | Description |
 |--|--|--|--|
 | Yes | identifier | String | The id of the recipe |
-| No | description | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| No | description | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The description of the recipe |
 | Yes | [ingredients](#item) | Array | A list of ingredients |
 | Yes | [result](#item-count) | Object | The resulting recipe. |
 
@@ -241,7 +241,7 @@ Additional properties
 | Required | Name | Type | Description |
 |--|--|--|--|
 | Yes | identifier | String | The id of the recipe |
-| No | description | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| No | description | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The description of the recipe |
 | Yes | [pattern](#pattern) | Array | The pattern to insert the keys. |
 | Yes | [key](#key) | Object | Contains the keys for the pattern. |
 | Yes | [result](#item-count) | Object | The resulting recipe. |
@@ -275,7 +275,7 @@ Additional properties
 | Required | Name | Default | Type | Description |
 |--|--|--|--|--|
 | Yes | identifier |  | String | The id of the recipe |
-| No | description |  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| No | description |  | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The description of the recipe |
 | Yes | [ingredients](#item) |  | Object | A list of ingredients |
 | No | experience | `0.1` | Number | The amount of experiance you get from smelting an item. |
 | No | cookingtime | `200` | Number | The number of ticks it takes to cook this item. |
@@ -305,7 +305,7 @@ Additional properties
 | Required | Name | Default | Type | Description |
 |--|--|--|--|--|
 | Yes | identifier |  | String | The id of the recipe |
-| No | description |  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| No | description |  | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The description of the recipe |
 | Yes | [ingredients](#item) |  | Object | A list of ingredients |
 | No | experience | `0.1` | Number | The amount of experiance you get from smelting an item. |
 | No | cookingtime | `200` | Number | The number of ticks it takes to cook this item. |
@@ -335,7 +335,7 @@ Additional properties
 | Required | Name | Default | Type | Description |
 |--|--|--|--|--|
 | Yes | identifier |  | String | The id of the recipe |
-| No | description |  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| No | description |  | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The description of the recipe |
 | Yes | [ingredients](#item) |  | Object | A list of ingredients |
 | No | experience | `0.1` | Number | The amount of experiance you get from smelting an item. |
 | No | cookingtime | `200` | Number | The number of ticks it takes to cook this item. |
@@ -365,7 +365,7 @@ Additional properties
 | Required | Name | Default | Type | Description |
 |--|--|--|--|--|
 | Yes | identifier |  | String | The id of the recipe |
-| No | description |  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| No | description |  | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The description of the recipe |
 | Yes | [ingredients](#item) |  | Object | A list of ingredients |
 | No | experience | `0.1` | Number | The amount of experiance you get from smelting an item. |
 | No | cookingtime | `200` | Number | The number of ticks it takes to cook this item. |
@@ -395,7 +395,7 @@ Additional properties
 | Required | Name | Default | Type | Description |
 |--|--|--|--|--|
 | Yes | identifier |  | String | The id of the recipe |
-| No | description |  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| No | description |  | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The description of the recipe |
 | Yes | [ingredients](#item) |  | Object | A list of ingredients |
 | No | count | `1` | Integer [`1-64`] | The number of items to give. |
 | Yes | [result]((#item-count)) |  | Object | The resulting recipe. |
@@ -423,7 +423,7 @@ Additional properties
 | Required | Name | Default | Type | Description |
 |--|--|--|--|--|
 | Yes | identifier |  | String | The id of the recipe |
-| No | description |  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The description of the recipe |
+| No | description |  | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The description of the recipe |
 | Yes | [base](#item) |  | Object | The base item |
 | Yes | [addition](#item) |  | Object | The item that you add to the base item. |
 | Yes | [result](#item-count) |  | Object | The resulting recipe. |
@@ -532,7 +532,7 @@ Additional properties
 |--|--|--|--|--|
 | No | icon |  | String | The image to use as a icon. |
 | No | color |  | String | The color for the msgbox. Must be a 6 digit hex |
-| Yes | contents |  | [RAW JSON](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) | The contents of the msgbox, supports RAW JSON |
+| Yes | contents |  | [RAW JSON](https://minecraft.wiki/w/Raw_JSON_text_format) | The contents of the msgbox, supports RAW JSON |
 
 #### Examples
 ```json
